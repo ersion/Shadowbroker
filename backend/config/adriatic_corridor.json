@@ -1,0 +1,108 @@
+{
+  "corridor": "adriatic_ionian_maritime_corridor",
+  "description": "Bounding boxes for the Adriatic/Ionian maritime corridor covering the Albanian coast, the Strait of Otranto and the Sarande-Corfu channel. Coordinates are WGS84 [min_lon, min_lat, max_lon, max_lat].",
+  "units": {
+    "speed": "kn",
+    "draft": "m",
+    "depth": "m",
+    "kind": "zone classification: port_approach | bay | open_sea"
+  },
+  "defaults": {
+    "speed_limit_kn": 18.0,
+    "max_draft_m": 12.0,
+    "min_safe_depth_m": 5.0,
+    "transponder_gap_minutes": 20.0,
+    "stop_speed_kn": 0.5,
+    "stop_min_drift_nm": 0.2
+  },
+  "zones": [
+    {
+      "zone_id": "durres_port_approach",
+      "name": "Durres Port Approach",
+      "bbox": [
+        19.35,
+        41.2,
+        19.6,
+        41.45
+      ],
+      "speed_limit_kn": 8.0,
+      "max_draft_m": 11.5,
+      "min_safe_depth_m": 9.5,
+      "tactical_speed_kn": 6.0,
+      "anomaly_thresholds": {
+        "anomalous_stop": true,
+        "high_speed_transit": true,
+        "draft_hazard": true,
+        "transponder_gap": true
+      },
+      "kind": "port_approach"
+    },
+    {
+      "zone_id": "vlore_bay",
+      "name": "Vlore Bay",
+      "bbox": [
+        19.35,
+        40.3,
+        19.62,
+        40.62
+      ],
+      "speed_limit_kn": 10.0,
+      "max_draft_m": 15.0,
+      "min_safe_depth_m": 12.0,
+      "tactical_speed_kn": 8.0,
+      "anomaly_thresholds": {
+        "anomalous_stop": true,
+        "high_speed_transit": true,
+        "draft_hazard": true,
+        "transponder_gap": true
+      },
+      "kind": "bay"
+    },
+    {
+      "zone_id": "strait_of_otranto",
+      "name": "Strait of Otranto",
+      "bbox": [
+        18.35,
+        39.7,
+        19.4,
+        40.85
+      ],
+      "speed_limit_kn": 20.0,
+      "max_draft_m": 20.0,
+      "min_safe_depth_m": 18.0,
+      "tactical_speed_kn": 16.0,
+      "anomaly_thresholds": {
+        "anomalous_stop": true,
+        "high_speed_transit": true,
+        "draft_hazard": true,
+        "transponder_gap": true
+      },
+      "kind": "open_sea"
+    },
+    {
+      "zone_id": "sarande_corfu_channel",
+      "name": "Sarande-Corfu Channel",
+      "bbox": [
+        19.8,
+        39.55,
+        20.15,
+        39.95
+      ],
+      "speed_limit_kn": 12.0,
+      "max_draft_m": 14.0,
+      "min_safe_depth_m": 11.0,
+      "tactical_speed_kn": 10.0,
+      "anomaly_thresholds": {
+        "anomalous_stop": true,
+        "high_speed_transit": true,
+        "draft_hazard": true,
+        "transponder_gap": true
+      },
+      "kind": "open_sea"
+    }
+  ],
+  "masking": {
+    "speed_round_dp": 3,
+    "draft_round_dp": 2
+  }
+}
